@@ -13,9 +13,6 @@ const plugin = postcss.plugin('postcss-dialog', (_options) => {
     require('postcss-import')({
       addDependencyTo: options.bundler
     }),
-    require('postcss-autoreset')({
-      reset: 'initial'
-    }),
     require('postcss-cssnext')({
       browsers: options.browsers
     }),

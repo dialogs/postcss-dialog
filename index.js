@@ -4,6 +4,7 @@ const defaultOptions = {
   debug: false,
   report: true,
   bundler: null,
+  initial: true,
   autoprefixer: true,
   browsers: 'Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8'
 };
@@ -24,9 +25,9 @@ const plugin = postcss.plugin('postcss-dialog', (_options) => {
   plugins.push(
     require('postcss-cssnext')({
       browsers: options.browsers,
-      autoprefixer: {
-        add: options.autoprefixer,
-        browsers: options.browsers,
+      features: {
+        initial: options.initial,
+        autoprefixer: options.autoprefixer
       }
     })
   );

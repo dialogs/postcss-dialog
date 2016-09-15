@@ -23,9 +23,16 @@ postcss([
 Options
 -------
 
- - `debug` enables additional logging
- - `bundler` pass webpack instance for correct import resolving
- - `browsers` [browserlist string](https://github.com/ai/browserslist#queries) for autoprefixer, etc.
+Options
+-------
+
+Name | Default | Description
+---- | ------- | -----------
+`debug` | `false` | Enable reporting to web page
+`report` | `true` | Enable reporting to console
+`bundler` | `null` | Pass webpack instance for correct import resolving
+`autoprefixer` | `true` | Enable Autoprefixer
+`browsers` | `Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8` | Supported browsers
 
 License
 -------

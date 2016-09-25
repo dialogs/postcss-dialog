@@ -1,6 +1,7 @@
 const postcss = require('postcss');
 
 const defaultOptions = {
+  rtl: false,
   debug: false,
   report: true,
   bundler: null,
@@ -31,6 +32,12 @@ const plugin = postcss.plugin('postcss-dialog', (_options) => {
       }
     })
   );
+
+  if (options.rtl) {
+    plugins.push(
+      require('rtlcss')()
+    );
+  }
 
   if (options.report) {
     plugins.push(

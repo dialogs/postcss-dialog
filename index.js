@@ -6,6 +6,7 @@ const defaultOptions = {
   report: true,
   bundler: null,
   initial: true,
+  properties: true,
   autoprefixer: true,
   browsers: 'Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8'
 };
@@ -28,7 +29,8 @@ const plugin = postcss.plugin('postcss-dialog', (_options) => {
       browsers: options.browsers,
       features: {
         initial: options.initial,
-        autoprefixer: options.autoprefixer
+        autoprefixer: options.autoprefixer,
+        customProperties: options.properties
       }
     })
   );

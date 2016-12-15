@@ -4,7 +4,7 @@ const defaultOptions = {
   rtl: false,
   debug: false,
   report: true,
-  bundler: null,
+  import: true,
   initial: true,
   properties: true,
   autoprefixer: true,
@@ -16,11 +16,9 @@ const plugin = postcss.plugin('postcss-dialog', (_options) => {
 
   const plugins = [];
 
-  if (options.bundler) {
+  if (options.import) {
     plugins.push(
-      require('postcss-import')({
-        addDependencyTo: options.bundler
-      })
+      require('postcss-import')()
     );
   }
 

@@ -1,24 +1,29 @@
 const postcss = require('postcss');
+const defaultsDeep = require('lodash.defaultsdeep');
 
 const defaultOptions = {
   rtl: false,
   debug: false,
   report: true,
-  import: true,
-  initial: true,
+  import: {
+    skipDuplicates: true
+  },
+  initial: {
+    reset: 'all'
+  },
   properties: true,
   autoprefixer: true,
   browsers: 'Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8'
 };
 
 const plugin = postcss.plugin('postcss-dialog', (_options) => {
-  const options = Object.assign(defaultOptions, _options);
+  const options = defaultsDeep({}, _options, defaultOptions);
 
   const plugins = [];
 
   if (options.import) {
     plugins.push(
-      require('postcss-import')()
+      require('postcss-import')(options.import)
     );
   }
 

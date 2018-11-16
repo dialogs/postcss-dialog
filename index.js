@@ -27,7 +27,12 @@ const plugin = postcss.plugin("postcss-dialog", _options => {
 
   plugins.push(
     require("postcss-preset-env")({
-      browsers: options.browsers
+      browsers: options.browsers,
+      autoprefixer: options.autoprefixer,
+      features: {
+        "all-property": options.initial,
+        "custom-properties": options.properties
+      }
     })
   );
 

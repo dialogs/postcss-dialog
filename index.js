@@ -5,6 +5,7 @@ const defaultOptions = {
   rtl: false,
   debug: false,
   report: true,
+  stage: 2,
   import: {
     skipDuplicates: true
   },
@@ -27,6 +28,7 @@ const plugin = postcss.plugin("postcss-dialog", _options => {
 
   plugins.push(
     require("postcss-preset-env")({
+      stage: options.stage,
       browsers: options.browsers,
       autoprefixer: options.autoprefixer,
       features: {

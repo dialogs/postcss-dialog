@@ -23,14 +23,12 @@ postcss([
 Options
 -------
 
-Options
--------
-
 Name | Default | Description
 ---- | ------- | -----------
 `debug` | `false` | Enable reporting to web page
 `report` | `true` | Enable reporting to console
 `bundler` | `null` | Pass webpack instance for correct import resolving
+`stage` | `3` | Specify a postcss-preset-env `stage`
 `initial` | `true` | Enable `initial: all` polyfill
 `autoprefixer` | `true` | Enable Autoprefixer
 `browsers` | `Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8` | Supported browsers

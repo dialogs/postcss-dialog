@@ -28,7 +28,7 @@ const defaultOptions = {
   debug: false
 };
 
-const plugin = postcss.plugin("postcss-preset-dialog", _options => {
+const plugin = postcss.plugin("postcss-dialog", _options => {
   const options = defaultsDeep({}, _options, defaultOptions);
   const plugins = [];
 

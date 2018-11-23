@@ -1,16 +1,13 @@
-PostCSS Dialog
-==============
+# PostCSS Dialog
 
-Installation
-------------
+## Installation
 
 ```
 npm install --save-dev postcss
 npm install --save-dev @dlghq/postcss-dialog
 ```
 
-Usage
------
+## Usage
 
 ```js
 postcss([
@@ -20,19 +17,51 @@ postcss([
 ]);
 ```
 
-Options
--------
+## Options
 
-Name | Default | Description
----- | ------- | -----------
-`debug` | `false` | Enable reporting to web page
-`report` | `true` | Enable reporting to console
-`bundler` | `null` | Pass webpack instance for correct import resolving
-`stage` | `3` | Specify a postcss-preset-env `stage`
-`initial` | `true` | Enable `initial: all` polyfill
-`autoprefixer` | `true` | Enable Autoprefixer
-`browsers` | `Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8` | Supported browsers
+Name      | Plugin
+--------- | ------------
+`import`  | [`postcss-import`](https://github.com/postcss/postcss-import)
+`debug`   | [`postcss-browser-reporter`](https://github.com/postcss/postcss-browser-reporter)
+`report`  | [`postcss-reporter`](https://github.com/postcss/postcss-reporter)
+`rtl`     | [`rtlcss`](https://github.com/MohammadYounes/rtlcss)
+`dedupe`  | [`postcss-discard-duplicates`](https://github.com/ben-eb/postcss-discard-duplicates)
+`modules` | [`postcss-modules`](https://github.com/css-modules/postcss-modules)
+`env`     | [`postcss-preset-env`](https://github.com/csstools/postcss-preset-env)
+`color`   | [`postcss-color-mod-function`](https://github.com/jonathantneal/postcss-color-mod-function)
+`mixins`  | [`postcss-mixins`](https://github.com/postcss/postcss-mixins)
 
-License
--------
+Set value to `false` or `null` to disable plugin.
+
+#### Default values
+
+```
+const defaultOptions = {
+  import: {
+    skipDuplicates: true
+  },
+  mixins: true,
+  color: true,
+  env: {
+    stage: 3,
+    browsers: "Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8",
+    autoprefixer: true,
+    features: {
+      "custom-media-queries": true,
+      "custom-properties": true,
+      "all-property": true
+    }
+  },
+  modules: false,
+  dedupe: false,
+  rtl: false,
+  report: true,
+  debug: {
+    selector: "body:after"
+  }
+};
+```
+
+## License
+
 [Apache-2.0](LICENSE)

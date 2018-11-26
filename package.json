@@ -10,6 +10,13 @@
     "postpublish": "git push --follow-tags"
   },
   "author": "Nikita Gusakov <gusnkt@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dialogs/postcss-dialog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dialogs/postcss-dialog/issues"
+  },
   "license": "Apache-2.0",
   "dependencies": {
     "lodash.defaultsdeep": "4.6.0",

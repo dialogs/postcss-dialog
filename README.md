@@ -38,27 +38,30 @@ Set value to `false` or `null` to disable plugin.
 ```
 const defaultOptions = {
   import: {
-    skipDuplicates: true
+    skipDuplicates: true,
   },
   mixins: true,
-  color: true,
   env: {
     stage: 3,
-    browsers: "Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8",
+    browsers: 'Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8',
     autoprefixer: true,
     features: {
-      "custom-media-queries": true,
-      "custom-properties": true,
-      "all-property": true
-    }
+      'custom-media-queries': true,
+      'custom-properties': {
+        preserve: false,
+      },
+      'all-property': {
+        reset: 'all',
+      },
+      'nesting-rules': true,
+      'color-mod-function': true,
+    },
   },
   modules: false,
-  dedupe: false,
+  dedupe: true,
   rtl: false,
   report: true,
-  debug: {
-    selector: "body:after"
-  }
+  debug: false,
 };
 ```
 

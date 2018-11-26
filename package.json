@@ -1,6 +1,6 @@
 {
   "name": "@dlghq/postcss-dialog",
-  "version": "1.12.1-4",
+  "version": "1.12.1-5",
   "description": "PostCSS pack for Dialog",
   "main": "index.js",
   "scripts": {

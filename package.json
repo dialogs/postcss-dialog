@@ -1,6 +1,6 @@
 {
   "name": "@dlghq/postcss-dialog",
-  "version": "1.12.0",
+  "version": "1.12.1-5",
   "description": "PostCSS pack for Dialog",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,23 @@
     "postpublish": "git push --follow-tags"
   },
   "author": "Nikita Gusakov <gusnkt@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dialogs/postcss-dialog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dialogs/postcss-dialog/issues"
+  },
   "license": "Apache-2.0",
   "dependencies": {
     "lodash.defaultsdeep": "4.6.0",
-    "postcss": "5.2.17",
+    "postcss": "7.0.6",
     "postcss-browser-reporter": "0.5.0",
-    "postcss-cssnext": "3.1.0",
+    "postcss-discard-duplicates": "4.0.2",
     "postcss-import": "12.0.1",
+    "postcss-mixins": "6.2.0",
+    "postcss-modules": "1.4.1",
+    "postcss-preset-env": "6.4.0",
     "postcss-reporter": "6.0.0",
     "rtlcss": "2.4.0"
   }

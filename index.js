@@ -10,7 +10,6 @@ const defaultOptions = {
     skipDuplicates: true,
   },
   mixins: true,
-  for: true,
   env: {
     stage: 3,
     browsers: 'Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8',
@@ -44,10 +43,6 @@ const plugin = postcss.plugin('postcss-dialog', (_options) => {
 
   if (options.mixins) {
     plugins.push(require('postcss-mixins')(options.mixins));
-  }
-
-  if (options.for) {
-    plugins.push(require('postcss-for')(options.for));
   }
 
   if (options.env) {

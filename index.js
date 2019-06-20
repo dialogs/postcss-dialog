@@ -12,8 +12,6 @@ const defaultOptions = {
   mixins: true,
   env: {
     stage: 3,
-    browsers: 'Chrome >= 45, ff >= 40, ie >= 10, Safari >= 8',
-    autoprefixer: true,
     features: {
       'custom-media-queries': true,
       'custom-properties': {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 dialog LLC <info@dlg.im>
+ * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
 const postcss = require('postcss');
@@ -14,18 +14,16 @@ const defaultOptions = {
     stage: 3,
     features: {
       'custom-media-queries': true,
-      'custom-properties': {
-        preserve: false,
-      },
-      'all-property': {
-        reset: 'all',
-      },
       'nesting-rules': true,
-      'color-mod-function': true,
+      'custom-properties': true,
+      'color-mod-function': { unresolved: 'warn' },
     },
   },
   modules: false,
   dedupe: true,
+  cssnano: {
+    preset: 'default',
+  },
   rtl: false,
   report: true,
   debug: false,
@@ -47,12 +45,16 @@ const plugin = postcss.plugin('postcss-dialog', (_options) => {
     plugins.push(require('postcss-preset-env')(options.env));
   }
 
+  if (options.modules) {
+    plugins.push(require('postcss-modules')(options.modules));
+  }
+
   if (options.dedupe) {
     plugins.push(require('postcss-discard-duplicates')(options.dedupe));
   }
 
-  if (options.modules) {
-    plugins.push(require('postcss-modules')(options.modules));
+  if (options.cssnano) {
+    plugins.push(require('cssnano')(options.cssnano));
   }
 
   if (options.rtl) {
